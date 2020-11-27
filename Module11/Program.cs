@@ -10,7 +10,9 @@ namespace Module11
             //Item_11_7();
             //Item_12_FinalTask();
 
-            
+            Item_12_1_16();
+
+            (string Name, string Type, float Age) Pet;
 
             Console.ReadKey();
         }
@@ -94,35 +96,133 @@ namespace Module11
         {
             Console.WriteLine("Напишите свой любимый цвет консоли с маленькой буквы: ");
 
-            switch (Console.ReadLine())
+            for (int i = 5; i > 1; i--)
             {
-                case "red":
-                    Console.BackgroundColor = ConsoleColor.Red;
-                    Console.ForegroundColor = ConsoleColor.Black;
+                Console.WriteLine($"Iteration {i}");
 
-                    Console.WriteLine("Your color is red!");
-                    break;
+                switch (Console.ReadLine())
+                {
+                    case "red":
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.ForegroundColor = ConsoleColor.Black;
 
-                case "green":
-                    Console.BackgroundColor = ConsoleColor.Green;
-                    Console.ForegroundColor = ConsoleColor.Black;
+                        Console.WriteLine("Your color is red!");
+                        break;
 
-                    Console.WriteLine("Your color is green!");
-                    break;
+                    case "green":
+                        Console.BackgroundColor = ConsoleColor.Green;
+                        Console.ForegroundColor = ConsoleColor.Black;
 
-                case "cyan":
-                    Console.BackgroundColor = ConsoleColor.Cyan;
-                    Console.ForegroundColor = ConsoleColor.Black;
+                        Console.WriteLine("Your color is green!");
+                        break;
 
-                    Console.WriteLine("Your color is cyan!");
-                    break;
+                    case "cyan":
+                        Console.BackgroundColor = ConsoleColor.Cyan;
+                        Console.ForegroundColor = ConsoleColor.Black;
 
-                default:
-                    Console.BackgroundColor = ConsoleColor.Yellow;
-                    Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Your color is cyan!");
+                        break;
 
-                    Console.WriteLine("Your color is yellow!");
-                    break;
+                    default:
+                        Console.BackgroundColor = ConsoleColor.Yellow;
+                        Console.ForegroundColor = ConsoleColor.Red;
+
+                        Console.WriteLine("Your color is yellow!");
+                        break;
+                }
+            }
+        }
+
+        static void Item_12_2_11()
+        {
+            Console.WriteLine("Цикл do");
+            int t = 0;
+
+            do
+            {
+                Console.WriteLine(t);
+                Console.WriteLine("Напишите свой любимый цвет с маленькой буквы");
+
+                switch (Console.ReadLine())
+                {
+                    case "red":
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.ForegroundColor = ConsoleColor.Black;
+
+                        Console.WriteLine("Your color is red!");
+                        break;
+
+                    case "green":
+                        Console.BackgroundColor = ConsoleColor.Green;
+                        Console.ForegroundColor = ConsoleColor.Black;
+
+                        Console.WriteLine("Your color is green!");
+                        break;
+
+                    case "cyan":
+                        Console.BackgroundColor = ConsoleColor.Cyan;
+                        Console.ForegroundColor = ConsoleColor.Black;
+
+                        Console.WriteLine("Your color is cyan!");
+                        break;
+
+                    default:
+                        Console.BackgroundColor = ConsoleColor.Yellow;
+                        Console.ForegroundColor = ConsoleColor.Red;
+
+                        Console.WriteLine("Your color is yellow!");
+                        break;
+                }
+
+                t++;
+
+            } while (t < 3);
+        }
+
+        static void Item_12_4_3()
+        {
+            var (name, age) = ("Dmitry", 29);
+
+            Console.WriteLine($"My name is {name}");
+            Console.WriteLine($"I am {age} years old");
+
+            Console.Write("Enter your name: ");
+            name = Console.ReadLine();
+
+            Console.Write("Enter your age: ");
+            age = Convert.ToByte(Console.ReadLine());
+
+            Console.WriteLine($"Your name is {name} and age is {age}");
+        }
+
+        static void Item_12_5()
+        {
+            (string Name, string LastName, string Login, int LoginLength, bool HasPet, string[] favcolors, double Age) User;
+
+            for (int i = 0; i < 3; i++)
+            {
+                Console.Write("Enter your name: ");
+                User.Name = Console.ReadLine();
+
+                Console.Write("Enter your surname: ");
+                User.LastName = Console.ReadLine();
+
+                Console.Write("Enter your login: ");
+                User.Login = Console.ReadLine();
+                User.LoginLength = User.Login.Length;
+
+                Console.WriteLine("Do you have a pet? Да or Нет");
+                User.HasPet = Console.ReadLine() == "Да";
+
+                Console.WriteLine("Enter user age: ");
+                User.Age = Convert.ToDouble(Console.ReadLine());
+
+                User.favcolors = new string[3];
+                for (int j = 0; j < User.favcolors.Length; j++)
+                {
+                    Console.WriteLine($"Enter your {j} favourite color: ");
+                    User.favcolors[j] = Console.ReadLine();
+                }
             }
         }
     }
