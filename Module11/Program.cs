@@ -12,7 +12,7 @@ namespace Module11
 
             Item_12_1_16();
 
-            (string Name, string Type, float Age) Pet;
+            //(string Name, string Type, float Age) Pet;
 
             Console.ReadKey();
         }
