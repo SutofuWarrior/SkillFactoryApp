@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Module15
+﻿namespace Module15
 {
     /// <summary>
     /// Товар

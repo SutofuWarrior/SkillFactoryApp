@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading;
 
 namespace Module15
 {
@@ -117,9 +116,7 @@ namespace Module15
         public virtual void ProcessDelivery()
         {
             ConsoleHelper.ShopSay("Заказ получен службой доставки");
-            Thread.SpinWait(500);
             ConsoleHelper.ShopSay("Заказ отправлен");
-            Thread.SpinWait(1000);
         }
     }
 
@@ -151,7 +148,6 @@ namespace Module15
 
             ConsoleHelper.ShopSay($"Заказ доставлен в пункт выдачи");
             ConsoleHelper.ShopSay($"Заказ отправлен с курьером по адресу {CustomerAddress}");
-            Thread.SpinWait(1000);
             ConsoleHelper.ShopSay("Заказ получен");
         }
     }

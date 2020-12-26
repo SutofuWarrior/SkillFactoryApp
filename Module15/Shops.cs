@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 
 namespace Module15
 {
@@ -108,12 +107,8 @@ namespace Module15
 
         private void SendOrder(Order order)
         {
-            Thread.SpinWait(1000);
             ConsoleHelper.ShopSay($"Заказ {order.Number} отправлен.");
-
-            Thread.SpinWait(1000);
             order.Delivery.ProcessDelivery();
-
             SimpleDeliveryService.SendShopDelivery(order);
 
             Console.ReadKey();
