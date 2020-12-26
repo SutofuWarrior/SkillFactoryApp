@@ -34,9 +34,6 @@ namespace Module15
     /// </summary>
     public abstract class BaseAddress
     {
-        public override bool Equals(object obj)
-            => Equals(obj);
-
         public static bool operator ==(BaseAddress address1, BaseAddress address2) 
             => address1.Equals(address2);
 
@@ -76,16 +73,19 @@ namespace Module15
         public string Street { get; set; }
         public string House { get; set; }
 
-        public override bool Equals(object obj)
+        public static bool operator ==(Address address1, Address address2)
         {
-            if (obj is not Address address2)
-                return false;
+            if (object.ReferenceEquals(address1, address2))
+                return true;
 
             return
-                this.City == address2.City &&
-                this.Street == address2.Street &&
-                this.House == address2.House;
+                address1.City == address2.City &&
+                address1.Street == address2.Street &&
+                address1.House == address2.House;
         }
+
+        public static bool operator !=(Address address1, Address address2)
+            => !(address1 == address2);
 
         public override string ToString()
             => $"г.{City}, {Street}, д.{House}";
